@@ -1,5 +1,9 @@
+{"query": "mutation uploadCsv($csvData: Upload!, $name: String){uploadCsv(input: {csvData: $csvData, name: $name}) { result }}", "variables": {"csvData": null, "name":"ゴミの日"}}
+
 type Mutation {
-  "CSVデータアップロード"
+  """
+  CSVデータアップロード
+  """
   uploadCsv(input: UploadCsvInput!): UploadCsvPayload!
 }
 
@@ -14,7 +18,9 @@ input UploadCsvInput {
 }
 
 type UploadCsvPayload {
-  "アップロードの結果"
+  """
+  アップロードの結果
+  """
   result: UploadResult!
 }
 
