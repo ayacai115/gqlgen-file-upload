@@ -1,0 +1,26 @@
+type Mutation {
+  "CSVデータアップロード"
+  uploadCsv(input: UploadCsvInput!): UploadCsvPayload!
+}
+
+# ファイルアップロード用のビルトインの型
+scalar Upload
+
+input UploadCsvInput {
+  "アップロードするCSVデータ"
+  csvData: Upload!
+  "アップロードの種別"
+  name: String
+}
+
+type UploadCsvPayload {
+  "アップロードの結果"
+  result: UploadResult!
+}
+
+enum UploadResult {
+  "成功"
+  SUCCEEDED
+  "失敗"
+  FAILED
+}
